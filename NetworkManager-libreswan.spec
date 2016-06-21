@@ -74,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/nm-libreswan-auth-dialog
 %attr(755,root,root) %{_libdir}/nm-libreswan-service
 %attr(755,root,root) %{_libdir}/nm-libreswan-service-helper
-%{_libdir}/NetworkManager/VPN/nm-libreswan-service.name
+%{_prefix}/lib/NetworkManager/VPN/nm-libreswan-service.name
 %{_sysconfdir}/NetworkManager/VPN/nm-libreswan-service.name
 %config(noreplace) %verify(not md5 mtime size) /etc/dbus-1/system.d/nm-libreswan-service.conf
 %{_datadir}/appdata/network-manager-libreswan.metainfo.xml
