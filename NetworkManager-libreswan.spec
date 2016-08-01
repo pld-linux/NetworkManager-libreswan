@@ -17,7 +17,7 @@ BuildRequires:	glib2-devel >= 1:2.32
 BuildRequires:	gtk+3-devel >= 3.4.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libnl-devel >= 1:3.2.8
-BuildRequires:	libsecret-devel
+BuildRequires:	libsecret-devel >= 0.18
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	pkgconfig
@@ -28,6 +28,7 @@ Requires:	NetworkManager-gtk-lib >= 1.2.0
 Requires:	glib2 >= 1:2.32
 Requires:	gtk+3 >= 3.4.0
 Requires:	libnl >= 1:3.2.8
+Requires:	libsecret >= 0.18
 Provides:	NetworkManager-openswan = %{version}-%{release}
 Obsoletes:	NetworkManager-openswan < 1.2.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
