@@ -1,24 +1,24 @@
 Summary:	NetworkManager VPN integration for libreswan
 Summary(pl.UTF-8):	Integracja NetworkManagera z libreswan
 Name:		NetworkManager-libreswan
-Version:	1.2.6
+Version:	1.2.10
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-libreswan/1.2/%{name}-%{version}.tar.xz
-# Source0-md5:	3c2113f0b1cdb540b4eda243ed10459d
+# Source0-md5:	dc3c108661e8dad2d95cccc4a966f7c9
 URL:		https://wiki.gnome.org/Projects/NetworkManager
 BuildRequires:	NetworkManager-devel >= 2:1.2.0
 BuildRequires:	NetworkManager-gtk-lib-devel >= 1.2.0
 BuildRequires:	autoconf >= 2.52
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.32
 BuildRequires:	gtk+3-devel >= 3.4.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libnl-devel >= 1:3.2.8
 BuildRequires:	libsecret-devel >= 0.18
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
@@ -82,3 +82,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/appdata/network-manager-libreswan.metainfo.xml
 %dir %{_datadir}/gnome-vpn-properties/libreswan
 %{_datadir}/gnome-vpn-properties/libreswan/nm-libreswan-dialog.ui
+%{_mandir}/man5/nm-settings-libreswan.5*
