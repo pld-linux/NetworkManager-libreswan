@@ -2,7 +2,7 @@ Summary:	NetworkManager VPN integration for libreswan
 Summary(pl.UTF-8):	Integracja NetworkManagera z libreswan
 Name:		NetworkManager-libreswan
 Version:	1.2.10
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-libreswan/1.2/%{name}-%{version}.tar.xz
@@ -73,9 +73,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/NetworkManager/libnm-libreswan-properties.so
 %attr(755,root,root) %{_libdir}/NetworkManager/libnm-vpn-plugin-libreswan.so
 %attr(755,root,root) %{_libdir}/NetworkManager/libnm-vpn-plugin-libreswan-editor.so
-%attr(755,root,root) %{_libdir}/nm-libreswan-auth-dialog
-%attr(755,root,root) %{_libdir}/nm-libreswan-service
-%attr(755,root,root) %{_libdir}/nm-libreswan-service-helper
+%attr(755,root,root) %{_libexecdir}/nm-libreswan-auth-dialog
+%attr(755,root,root) %{_libexecdir}/nm-libreswan-service
+%attr(755,root,root) %{_libexecdir}/nm-libreswan-service-helper
 %{_prefix}/lib/NetworkManager/VPN/nm-libreswan-service.name
 %{_sysconfdir}/NetworkManager/VPN/nm-libreswan-service.name
 %config(noreplace) %verify(not md5 mtime size) /etc/dbus-1/system.d/nm-libreswan-service.conf
