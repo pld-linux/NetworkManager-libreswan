@@ -1,12 +1,12 @@
 Summary:	NetworkManager VPN integration for libreswan
-Summary(pl.UTF-8):	Integracja NetworkManagera z libreswan
+Summary(pl.UTF-8):	Integracja NetworkManagera z sieciami VPN opartymi o libreswan
 Name:		NetworkManager-libreswan
-Version:	1.2.10
-Release:	2
+Version:	1.2.12
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-libreswan/1.2/%{name}-%{version}.tar.xz
-# Source0-md5:	dc3c108661e8dad2d95cccc4a966f7c9
+# Source0-md5:	11dbec93c6ff77a5378f326f0348807e
 URL:		https://wiki.gnome.org/Projects/NetworkManager
 BuildRequires:	NetworkManager-devel >= 2:1.2.0
 BuildRequires:	NetworkManager-gtk-lib-devel >= 1.2.0
@@ -34,10 +34,15 @@ Obsoletes:	NetworkManager-openswan < 1.2.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-NetworkManager VPN integration for libreswan.
+Libreswan VPN client plugin for NetworkManager.
+
+Support for configuring IKEv1 based IPsec virtual private network
+connections. Compatible with Libreswan and Cisco IPsec VPN servers.
 
 %description -l pl.UTF-8
-Integracja NetworkManagera z libreswan.
+Wtyczka klienta VPN Libreswan dla NetworkManagera. Pozwala na
+konfigurowanie wirtualnych sieci prywatnych (VPN) IPsec opartych na
+IKEv1, jest zgodna z serwerami VPN Libreswan oraz Cisco IPsec.
 
 %prep
 %setup -q
@@ -69,15 +74,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f NetworkManager-libreswan.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog
-%attr(755,root,root) %{_libdir}/NetworkManager/libnm-libreswan-properties.so
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/NetworkManager/libnm-vpn-plugin-libreswan.so
 %attr(755,root,root) %{_libdir}/NetworkManager/libnm-vpn-plugin-libreswan-editor.so
 %attr(755,root,root) %{_libexecdir}/nm-libreswan-auth-dialog
 %attr(755,root,root) %{_libexecdir}/nm-libreswan-service
 %attr(755,root,root) %{_libexecdir}/nm-libreswan-service-helper
 %{_prefix}/lib/NetworkManager/VPN/nm-libreswan-service.name
-%{_sysconfdir}/NetworkManager/VPN/nm-libreswan-service.name
 %config(noreplace) %verify(not md5 mtime size) /etc/dbus-1/system.d/nm-libreswan-service.conf
 %{_datadir}/appdata/network-manager-libreswan.metainfo.xml
 %dir %{_datadir}/gnome-vpn-properties/libreswan
