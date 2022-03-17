@@ -1,12 +1,13 @@
+# TODO: GTK4 for GNOME42 (requires libnma-gtk4 >= 1.8.33)
 Summary:	NetworkManager VPN integration for libreswan
 Summary(pl.UTF-8):	Integracja NetworkManagera z sieciami VPN opartymi o libreswan
 Name:		NetworkManager-libreswan
-Version:	1.2.14
+Version:	1.2.16
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/NetworkManager-libreswan/1.2/%{name}-%{version}.tar.xz
-# Source0-md5:	eb9b9c27f74ab798a3f870491d7668d6
+# Source0-md5:	b7b273bc11e2c443d08ebe4de1c1d33b
 URL:		https://wiki.gnome.org/Projects/NetworkManager
 BuildRequires:	NetworkManager-devel >= 2:1.2.0
 BuildRequires:	NetworkManager-gtk-lib-devel >= 1.2.0
@@ -82,7 +83,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libexecdir}/nm-libreswan-service-helper
 %{_prefix}/lib/NetworkManager/VPN/nm-libreswan-service.name
 %config(noreplace) %verify(not md5 mtime size) /etc/dbus-1/system.d/nm-libreswan-service.conf
-%{_datadir}/appdata/network-manager-libreswan.metainfo.xml
-%dir %{_datadir}/gnome-vpn-properties/libreswan
-%{_datadir}/gnome-vpn-properties/libreswan/nm-libreswan-dialog.ui
+%{_datadir}/metainfo/network-manager-libreswan.metainfo.xml
 %{_mandir}/man5/nm-settings-libreswan.5*
