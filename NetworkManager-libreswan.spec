@@ -5,12 +5,12 @@
 Summary:	NetworkManager VPN integration for libreswan
 Summary(pl.UTF-8):	Integracja NetworkManagera z sieciami VPN opartymi o libreswan
 Name:		NetworkManager-libreswan
-Version:	1.2.29
+Version:	1.2.30
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/NetworkManager-libreswan/1.2/%{name}-%{version}.tar.xz
-# Source0-md5:	9734927e057aa97a3d8b00d17e6cad12
+# Source0-md5:	242e13fcb7e182fb641063bfce8fe744
 URL:		https://wiki.gnome.org/Projects/NetworkManager
 BuildRequires:	NetworkManager-devel >= 2:1.2.0
 BuildRequires:	NetworkManager-gtk-lib-devel >= 1.2.0
